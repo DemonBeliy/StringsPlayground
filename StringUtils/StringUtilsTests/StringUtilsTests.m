@@ -54,7 +54,7 @@
     static NSArray * testPatterns;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        testPatterns = @[@"accumsan",
+        testPatterns = @[@"", @"accumsan",
                          @"imperdiet",
                          @"Epic fail... or is it?",
                          @"egestas tempus. Morbi at fringilla metus. Praesent faucibus risus ut lacus viverra imperdiet. Ut tempor sapien id pellentesque venenatis. Integer vitae elementum nibh. Proin lorem est, mattis at odi",
@@ -84,6 +84,10 @@
 {
     // Put teardown code here. This method is called after the invocation of each test method in the class.
     [super tearDown];
+}
+
+-(void) testInvalidData {
+    XCTAssertFalse([text containsString:nil],@"nil input should not produce true");
 }
 
 -(void) testCorrectness {

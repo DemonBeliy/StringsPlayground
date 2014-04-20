@@ -11,7 +11,7 @@
 @interface NSString (Matcher)
 
 /**
-    Runs a KMP pattern matcher to check if pattern is a substring of this stirng
+    Runs a KMP pattern matcher to check if pattern is a substring of this string.
  */
 -(BOOL) containsString:(NSString*)pattern;
 

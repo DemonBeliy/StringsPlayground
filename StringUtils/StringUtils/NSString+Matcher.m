@@ -12,6 +12,8 @@
 @implementation NSString (Matcher)
 
 -(BOOL) containsString:(NSString*) pattern {
+   
+    if([pattern length] == 0) return NO;
     
     int patternLength = pattern.length;
     int textLength = self.length;
